@@ -1,6 +1,6 @@
 {
   "name": "codex-ticket-workflow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Run controlled, evidence-driven ticket implementation workflows in Codex across all projects, including feature traceability, bug root-cause gates, scope escalation, blocking, verification, Jira/browser reporting, and rollback.",
   "skills": "./skills/"
 }
