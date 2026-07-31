@@ -1,0 +1,6 @@
+schema_version: 1.0.0
+plugin: codex-ticket-workflow@1.0.0
+entry_skill: ticket-workflow-orchestrator@1.0.0
+flows_path: assets/flows/manifest.yaml
+skill_lock_path: assets/skills-lock.yaml
+run_output: .codex-runs/<run-id>/
