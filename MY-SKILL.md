@@ -359,7 +359,7 @@ Một version đã publish là immutable. Nếu sửa nội dung thì bắt bu�
 
 ## v7 standalone — đi trước chatbot
 
-Bộ này chạy trực tiếp bằng Codex và không phụ thuộc `.my-ai/` hoặc ai-chatbot.
+Bộ này chạy trực tiếp bằng Codex.
 
 ```text
 implement ticket <url>

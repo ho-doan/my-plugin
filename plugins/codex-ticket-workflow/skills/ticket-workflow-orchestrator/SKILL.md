@@ -6,9 +6,7 @@ version: 1.0.0
 
 # Ticket Workflow Orchestrator
 
-This plugin runs directly in Codex across repositories. It is intentionally
-independent from the unfinished ai-chatbot and must not read or create `.my-ai/`
-configuration unless the current repository explicitly requires it.
+This plugin runs directly in Codex across repositories.
 
 ## Entry command
 
@@ -86,6 +84,7 @@ Repository `AGENTS.md` remains authoritative for repository conventions, build
 commands, permissions, and stricter safety requirements.
 
 If repository guidance conflicts with this plugin:
+
 - use the stricter safety or approval requirement;
 - record the conflict;
 - stop with `BLOCKED` when the conflict cannot be resolved safely.

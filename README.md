@@ -1,7 +1,6 @@
 # Codex Ticket Workflow Plugin
 
-Plugin cá nhân dùng trong mọi project, chạy trực tiếp bằng Codex và không phụ
-thuộc ai-chatbot.
+Plugin cá nhân dùng trong mọi project, chạy trực tiếp bằng Codex.
 
 ## Cài đặt
 
