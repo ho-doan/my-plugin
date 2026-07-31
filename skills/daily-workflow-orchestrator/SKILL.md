@@ -142,3 +142,20 @@ create impact inventory
 
 Orchestrator không được gọi `code-execution` cho tới khi có `unblock` contract hợp lệ.
 Việc đã tạo ticket hoặc subtask không tự động gỡ blocked.
+
+
+## Skill version resolution
+
+Trước khi chạy workflow:
+
+1. đọc `skills-manifest.yaml`;
+2. resolve tất cả skill qua `skills-lock.yaml`;
+3. từ chối `latest`, range hoặc unversioned skill trong production;
+4. ghi `.my-ai/runs/<run_id>/skill-resolution.yaml`;
+5. ghi exact skill id vào mọi report.
+
+Nếu lock file yêu cầu `browser-operations@1.0.0`, orchestrator không được tự chọn
+`browser-operations@1.0.1`.
+
+Nếu version candidate thất bại benchmark, workflow phải rollback lock về version
+đã PASS gần nhất và chạy lại validation trước khi resume.

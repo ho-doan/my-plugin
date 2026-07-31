@@ -323,3 +323,36 @@ stateDiagram-v2
 - Sau unblock vẫn phải chạy lại `readiness` và `scope gate`.
 - Với bug, proximate cause không đủ điều kiện để sửa production code.
 - Với scope lớn, Codex phải nêu chính xác service/module/repository bị ảnh hưởng trước khi dừng.
+
+## Versioning và rollback skill
+
+Mỗi skill có định danh độc lập:
+
+```text
+browser-operations@1.0.0
+browser-operations@1.0.1
+bug-history-root-cause@1.0.0
+```
+
+Workflow production pin exact version trong `skills-lock.yaml`.
+
+```mermaid
+flowchart TD
+    A[Active: browser-operations@1.0.0] --> B[Test candidate 1.0.1]
+    B --> C{Benchmark + contract PASS?}
+    C -- Có --> D[Approval]
+    D --> E[Update skills-lock.yaml → 1.0.1]
+    E --> F[Controlled rollout]
+    C -- Không --> G[Giữ hoặc rollback lock → 1.0.0]
+    G --> H[Replay validation]
+    H --> I[Resume bằng 1.0.0]
+```
+
+Các file liên quan:
+
+- `skills-manifest.yaml`: danh sách skill và version có sẵn;
+- `skills-lock.yaml`: version chính xác workflow đang dùng;
+- `SKILL_VERSIONING.md`: quy tắc SemVer, upgrade và rollback;
+- `templates/skill-resolution.yaml`: evidence version cho mỗi run.
+
+Một version đã publish là immutable. Nếu sửa nội dung thì bắt buộc tăng version.

@@ -1,0 +1,51 @@
+lock_version: 1.0.0
+package: codex-daily-workflow-skills@6.0.0
+resolved_skills:
+  browser-operations:
+    version: 1.0.0
+    id: browser-operations@1.0.0
+    entrypoint: skills/browser-operations/SKILL.md
+  bug-history-root-cause:
+    version: 1.0.0
+    id: bug-history-root-cause@1.0.0
+    entrypoint: skills/bug-history-root-cause/SKILL.md
+  code-execution:
+    version: 1.0.0
+    id: code-execution@1.0.0
+    entrypoint: skills/code-execution/SKILL.md
+  daily-workflow-orchestrator:
+    version: 1.0.0
+    id: daily-workflow-orchestrator@1.0.0
+    entrypoint: skills/daily-workflow-orchestrator/SKILL.md
+  delivery-report:
+    version: 1.0.0
+    id: delivery-report@1.0.0
+    entrypoint: skills/delivery-report/SKILL.md
+  implementation-traceability:
+    version: 1.0.0
+    id: implementation-traceability@1.0.0
+    entrypoint: skills/implementation-traceability/SKILL.md
+  readiness-assessment:
+    version: 1.0.0
+    id: readiness-assessment@1.0.0
+    entrypoint: skills/readiness-assessment/SKILL.md
+  scope-escalation-and-decomposition:
+    version: 1.0.0
+    id: scope-escalation-and-decomposition@1.0.0
+    entrypoint: skills/scope-escalation-and-decomposition/SKILL.md
+  task-planning:
+    version: 1.0.0
+    id: task-planning@1.0.0
+    entrypoint: skills/task-planning/SKILL.md
+  verification:
+    version: 1.0.0
+    id: verification@1.0.0
+    entrypoint: skills/verification/SKILL.md
+  work-intake:
+    version: 1.0.0
+    id: work-intake@1.0.0
+    entrypoint: skills/work-intake/SKILL.md
+  workflow-retrospective:
+    version: 1.0.0
+    id: workflow-retrospective@1.0.0
+    entrypoint: skills/workflow-retrospective/SKILL.md
