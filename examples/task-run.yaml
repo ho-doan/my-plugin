@@ -1,0 +1,21 @@
+version: 1
+run_id: "20260731-sample-task"
+work_type: task
+
+source:
+  tracker: jira
+  issue_url: "https://example.atlassian.net/browse/ABC-123"
+  issue_key: "ABC-123"
+
+repository:
+  path: "/absolute/path/to/repository"
+  base_branch: "main"
+  branch_name: "feat/ABC-123-short-name"
+
+execution:
+  allow_code_change: true
+  allow_browser_write: true
+  allow_push: true
+  allow_pr: true
+  approval_mode: manual
+  max_command_retries: 2

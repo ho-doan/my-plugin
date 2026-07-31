@@ -1,0 +1,21 @@
+version: 1
+run_id: "20260731-sample-bug"
+work_type: bug
+
+source:
+  tracker: jira
+  issue_url: "https://example.atlassian.net/browse/BUG-456"
+  issue_key: "BUG-456"
+
+repository:
+  path: "/absolute/path/to/repository"
+  base_branch: "develop"
+  branch_name: "fix/BUG-456-short-name"
+
+execution:
+  allow_code_change: true
+  allow_browser_write: false
+  allow_push: false
+  allow_pr: false
+  approval_mode: manual
+  max_command_retries: 2

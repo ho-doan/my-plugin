@@ -1,0 +1,33 @@
+version: 1
+run_id: "YYYYMMDD-HHMM-work-key"
+work_type: task
+
+source:
+  tracker: jira
+  issue_url: null
+  issue_key: null
+
+repository:
+  path: "."
+  base_branch: "main"
+  branch_name: null
+
+execution:
+  allow_code_change: true
+  allow_browser_write: false
+  allow_push: false
+  allow_pr: false
+  approval_mode: manual
+  max_command_retries: 2
+
+gates:
+  require_readiness_pass: true
+  require_verification_pass_for_browser_write: true
+  require_manual_approval_for:
+    - merge
+    - delete
+    - production_deploy
+    - broad_refactor
+
+evidence:
+  root: ".my-ai/runs"
