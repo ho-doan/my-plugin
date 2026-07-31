@@ -1,0 +1,56 @@
+id: feature-implementation
+version: 1.0.0
+run_output: codex-runs/<run-id>/
+steps:
+- id: intake
+  skill: work-intake@1.0.0
+  stop_on:
+  - FAIL
+  - UNKNOWN
+  - BLOCKED
+- id: readiness
+  skill: readiness-assessment@1.0.0
+  stop_on:
+  - FAIL
+  - UNKNOWN
+  - BLOCKED
+- id: traceability
+  skill: implementation-traceability@1.0.0
+  stop_on:
+  - FAIL
+  - UNKNOWN
+  - BLOCKED
+- id: scope
+  skill: scope-escalation-and-decomposition@1.0.0
+  stop_on:
+  - FAIL
+  - UNKNOWN
+  - BLOCKED
+- id: plan
+  skill: task-planning@1.0.0
+  stop_on:
+  - FAIL
+  - UNKNOWN
+  - BLOCKED
+- id: implement
+  skill: code-execution@1.0.0
+  stop_on:
+  - FAIL
+  - UNKNOWN
+  - BLOCKED
+- id: verify
+  skill: verification@1.0.0
+  stop_on:
+  - FAIL
+  - UNKNOWN
+  - BLOCKED
+- id: browser
+  skill: browser-operations@1.0.0
+  stop_on:
+  - FAIL
+  - UNKNOWN
+  - BLOCKED
+- id: report
+  skill: delivery-report@1.0.0
+- id: retrospective
+  skill: workflow-retrospective@1.0.0

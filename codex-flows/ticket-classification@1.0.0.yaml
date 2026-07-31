@@ -1,0 +1,15 @@
+id: ticket-classification
+version: 1.0.0
+implementation_allowed: false
+run_output: codex-runs/<run-id>/
+steps:
+- id: intake
+  skill: work-intake@1.0.0
+  stop_on:
+  - FAIL
+  - BLOCKED
+- id: readiness
+  skill: readiness-assessment@1.0.0
+- id: report
+  skill: delivery-report@1.0.0
+final_status: UNKNOWN

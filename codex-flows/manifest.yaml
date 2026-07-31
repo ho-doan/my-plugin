@@ -1,0 +1,29 @@
+schema_version: 1.0.0
+name: standalone-codex-ticket-flows
+version: 1.0.0
+routing:
+- priority: 100
+  when:
+    issue_types:
+    - Bug
+  flow: bug-root-cause-fix@1.0.0
+  file: codex-flows/bug-root-cause-fix@1.0.0.yaml
+- priority: 90
+  when:
+    labels_any:
+    - investigation
+    - root-cause-investigation
+  flow: root-cause-investigation@1.0.0
+  file: codex-flows/root-cause-investigation@1.0.0.yaml
+- priority: 50
+  when:
+    issue_types:
+    - Story
+    - Task
+    - Feature
+  flow: feature-implementation@1.0.0
+  file: codex-flows/feature-implementation@1.0.0.yaml
+fallback:
+  flow: ticket-classification@1.0.0
+  file: codex-flows/ticket-classification@1.0.0.yaml
+  implementation_allowed: false

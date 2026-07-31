@@ -356,3 +356,19 @@ Các file liên quan:
 - `templates/skill-resolution.yaml`: evidence version cho mỗi run.
 
 Một version đã publish là immutable. Nếu sửa nội dung thì bắt buộc tăng version.
+
+## v7 standalone — đi trước chatbot
+
+Bộ này chạy trực tiếp bằng Codex và không phụ thuộc `.my-ai/` hoặc ai-chatbot.
+
+```text
+implement ticket <url>
+  → AGENTS.md
+  → codex-flows/manifest.yaml
+  → selected versioned flow
+  → versioned skills
+  → codex-runs/<run-id>/
+```
+
+Sau khi chatbot hoàn thiện, chatbot có thể import hoặc chuyển đổi các flow đã
+được kiểm chứng này sang namespace riêng của nó.

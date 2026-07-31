@@ -1,0 +1,23 @@
+id: root-cause-investigation
+version: 1.0.0
+implementation_allowed: false
+run_output: codex-runs/<run-id>/
+steps:
+- id: intake
+  skill: work-intake@1.0.0
+  stop_on:
+  - FAIL
+  - BLOCKED
+- id: readiness
+  skill: readiness-assessment@1.0.0
+  stop_on:
+  - FAIL
+  - BLOCKED
+- id: root-cause
+  skill: bug-history-root-cause@1.0.0
+- id: scope
+  skill: scope-escalation-and-decomposition@1.0.0
+- id: browser
+  skill: browser-operations@1.0.0
+- id: report
+  skill: delivery-report@1.0.0
